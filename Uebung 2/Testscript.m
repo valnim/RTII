@@ -1,4 +1,6 @@
 %% Testscript
+clear all
+clc
 
 %% Aufgabe 1
 clc

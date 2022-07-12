@@ -1,3 +1,0 @@
-%% Testscript
-clc
-clear all
