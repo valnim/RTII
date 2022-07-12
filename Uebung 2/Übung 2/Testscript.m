@@ -1,0 +1,3 @@
+%% Testscript
+clc
+clear all

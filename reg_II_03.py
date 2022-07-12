@@ -12,7 +12,7 @@ import numpy as np
 
 #g = signal.TransferFunction([1], [1, 1, 0, 0]) #G(s) = 1/s^2/(s+1)
 
-g = cr.tf(np.array([1]), np.array([1, 1 ,0, 0]))
+g = cr.tf(np.array([1]), np.array([1, 1, 0, 0]))
 r = cr.tf(np.array([2]), np.array([1]))
 
 sys = cr.series(g, r)
