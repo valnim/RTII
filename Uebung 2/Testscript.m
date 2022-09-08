@@ -1,7 +1,6 @@
 %% Testscript
 clear all
 clc
-
 %% Aufgabe 1
 clc
 clear all
@@ -17,5 +16,7 @@ Ps = ((s+2)*(s-1))/(s*(s^2+2*s+1));
 myisimp(Ts,Ps);
 
 %% Aufgabe 2
+nu = []
 
 Res = resultante(nu,mu,rho);
+
