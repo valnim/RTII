@@ -46,6 +46,8 @@ Ps = ((s+2)*(s-1))/(s*(s^2+2*s+1));
 myisimp(Ts,Ps);
 
 %% Aufgabe 2
+clc
+clear all;
 nu = [1, 2, 3];
 mu = [3,4];
 rho= 1;
@@ -53,11 +55,15 @@ Res = resultante(nu,mu,rho);
 
 %% Aufgabe 3
 clc
-clear all
+clear all;
 s = tf('s');
+
+nut = (s^3 + 3 * s^2 + 3 * s + 1);
 Ps = (s-2) / (s*(s-1));
 
-nut = [1, 3, 3, 1];
-
 [R, T] = polvorgabe(Ps, nut);
+
+
+
+
 

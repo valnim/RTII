@@ -1,48 +1,5 @@
 clear all;
 clc;
-%% Spielerei
-
-r = rand();
-n = 500;
-m = 200;
-X_train = zeros(n, 2);
-Y_train = zeros(n, 1);
-X_test = zeros(m, 2);
-Y_test = zeros(m, 2);
-
-for i = 1:n
-    r = rand();
-    if r < 0.5
-        X_train(i,1) = 2 + r;
-        X_train(i,2) = 1 + r;
-        Y_train(i) = 0;
-    else
-        X_train(i,1) = 5 + r;
-        X_train(i,2) = 6 + r;
-        Y_train(i) = 1;
-    end
-end
-for i = 1:m
-    r = rand();
-    if r < 0.5
-        X_test(i,1) = 2 + r;
-        X_test(i,2) = 1 + r;
-        Y_test(i) = 0;
-    else
-        X_test(i,1) = 5 + r;
-        X_test(i,2) = 6 + r;
-        Y_test(i) = 1;
-    end
-end
-writematrix(X_train, 'xtrain.csv');
-writematrix(Y_train, 'ytrain.csv');
-%%
-Xtrain = datastore('xtrain.csv');
-Ytrain = datastore('ytrain.csv');
-%Xtest = datastore(X_test);
-%Ytest = datastore(Y_test);
-
-
 
 %% Matrizenrechnung
 
