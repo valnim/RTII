@@ -17,6 +17,6 @@ b = transpose(b);
 
 
 R = tf(b, a);
-T = tf(b)*tf(mu) / (tf(a)*tf(nu)+tf(b)*tf(mu));
+T = R*P/(1+R*P);
 end
 

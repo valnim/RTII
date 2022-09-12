@@ -63,6 +63,15 @@ Ps = (s-2) / (s*(s-1));
 
 [R, T] = polvorgabe(Ps, nut);
 
+figure(1)
+clf
+step(T, 10);
+hold on;
+step(10, 10);
+grid on;
+legend('y(t)', 'u(t)')
+
+stepinfo(T)
 
 
 
