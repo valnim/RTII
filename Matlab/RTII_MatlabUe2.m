@@ -53,6 +53,21 @@ mu = [3,4];
 rho= 1;
 Res = resultante(nu,mu,rho);
 
+
+%% Resultante Test
+clc
+clear all;
+s = tf('s');
+P = (2*s^2+1*s+0)/(3*s^3+4*s^2+5*s+6);
+[nu, mu] = tfdata(P,'v');
+n = length(nu) - 1;
+rho = n - 1;
+res = resultante(nu,mu,rho);
+%%
+nut = (3*s^3+4*s^2+5*s+6);
+[f] = tfdata(nut, 'v');
+f = flipud(transpose(f));
+
 %% Aufgabe 3
 clc
 clear all;
