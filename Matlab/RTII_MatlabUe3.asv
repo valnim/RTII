@@ -38,13 +38,13 @@ clc;
 Gs = 1/(s^2+2*s+1);
 
 Td = 0.1;   
-Gz = c2d(Gs, Td, 'tustin');
-[numGz, denGz] = tfdata(Gz, 'v');
+Gz_tus = c2d(Gs, Td, 'tustin');
+[numGz, denGz] = tfdata(Gz_tus, 'v');
 
 Rt = c2d(R, Td, 'tustin');
 [numRt, denRt] = tfdata(Rt, 'v');
 
 %d)
-Rv = c2d(R, Td, '');
-[numRt, denRt] = tfdata(Rv, 'v');
+Rt_tus = c2d(R, Td, 'tustin');
+[numRt, denRt] = tfdata(Gz_tus, 'v');
 
