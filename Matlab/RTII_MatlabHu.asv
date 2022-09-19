@@ -2,7 +2,7 @@
 clear; close all; clc
 s = tf('s');
 
-idx = 5; %Select Testbeispiel
+idx = 4; %Select Testbeispiel
 
 if idx == 1
     P = (s+3)/(s*(s-1));
