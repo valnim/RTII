@@ -2,7 +2,7 @@ function [R,T] = polvorgabe(P,nut)
 %POLVORGABE Summary of this function goes here
 %   Detailed explanation goes here
 
-[nu, mu] = tfdata(P,'v');
+[mu, nu] = tfdata(P,'v');
 n = length(nu) - 1;
 rho = n - 1;
 res = resultante(nu,mu,rho);

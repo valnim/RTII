@@ -59,8 +59,8 @@ clc
 clear all;
 s = tf('s');
 P = (2*s^2+1*s+0)/(3*s^3+4*s^2+5*s+6);
-[nu, mu] = tfdata(P,'v');
-n = length(nu) - 1;
+[mu, nu] = tfdata(P,'v');
+n = length(nu);
 rho = n - 1;
 res = resultante(nu,mu,rho);
 %%

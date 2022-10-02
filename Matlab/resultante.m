@@ -14,8 +14,8 @@ zeros1= zeros(rho+1);
 n = length(nu) - 1;
 dim1 = n + rho + 1;
 dim2 = 2*rho + 2;
-c1 = [flip(mu) zeros(1,dim1-length(mu))];
-c2 = [flip(nu) zeros(1,dim1-length(nu))];
+c1 = [flip(nu) zeros(1,dim1-length(nu))];
+c2 = [flip(mu) zeros(1,dim1-length(mu))];
 
 a = toeplitz(c1, zeros1);
 b = toeplitz(c2, zeros1);

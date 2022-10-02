@@ -32,10 +32,17 @@ P = (s-3)/(s*(s-1));
 
 omega = 3;
 
-nut = s + 5;
+%nut = s + 5;
 %nut = (s + 5)^2;
-%nut = (s + 5)^5;
+nut = (s + 5)^5;
 
 [R, T] = polvorgabe_HStoerung(P, nut, omega);
+figure(2)
+clf
+step(T, 10);
+hold on;
+step(10, 10);
+grid on;
+legend('y(t)', 'u(t)')
 
-
+stepinfo(T)
