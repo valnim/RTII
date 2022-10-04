@@ -32,9 +32,9 @@ P = (s-3)/(s*(s-1));
 
 omega = 3;
 
-%nut = s + 5;
+nut = s + 5;
 %nut = (s + 5)^2;
-nut = (s + 5)^5;
+%nut = (s + 5)^5;
 
 [R, T] = polvorgabe_HStoerung(P, nut, omega);
 figure(2)
