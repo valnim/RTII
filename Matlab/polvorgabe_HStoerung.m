@@ -1,5 +1,5 @@
 function [R,T] = polvorgabe_HStoerung(P, nut, omega)
-
+%  Polvorgabe und Unterdrückung von harmonischen Störungen
 s = tf('s');
 
 [mu, nu] = tfdata(P,'v');

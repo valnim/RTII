@@ -2,7 +2,7 @@
 clear; close all; clc
 s = tf('s');
 
-idx = 5; %Select Testbeispiel
+idx = 3; %Select Testbeispiel
 
 if idx == 1
     P = (s+3)/(s*(s-1));
@@ -32,9 +32,9 @@ P = (s-3)/(s*(s-1));
 
 omega = 3;
 
-nut = s + 5;
+%nut = s + 5;
 %nut = (s + 5)^2;
-%nut = (s + 5)^5;
+nut = (s + 5)^5;
 
 [R, T] = polvorgabe_HStoerung(P, nut, omega);
 figure(2)
@@ -46,3 +46,17 @@ grid on;
 legend('y(t)', 'u(t)')
 
 stepinfo(T)
+
+%% Plot Simulink Results Aufgabe 2
+clf;
+figure(3)
+plot(out.StepResponse.time,out.StepResponse.signals.values);
+hold on;
+plot(out.StepResponse.time, out.d.signals.values);
+hold on;
+plot(out.StepResponse.time, out.u.signals.values);
+grid on;
+legend('y(t)', 'd(t)', 'u(t)');
+title('Sprungantwort mit Störung');
+xlabel('Time (seconds)');
+ylabel('Amplitude');

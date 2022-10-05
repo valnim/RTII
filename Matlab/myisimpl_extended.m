@@ -1,6 +1,5 @@
 function [isimp_ext__flag,modify_flag, Tresult] = myisimpl_extended(P,T)
-%UNTITLED4 Summary of this function goes here
-%   Detailed explanation goes here
+%  Überprüfung auf Implementierbarkeit
 modify_flag = 0;
 s = tf('s');
 
