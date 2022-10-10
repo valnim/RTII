@@ -7,8 +7,7 @@ n =  length(pole(P));
 rho = length(zero(nut)) - n;
 
 while (rho - 1 < n )
-    disp("Warning")
-    warning;
+    warning('ny t ist nicht konsistent! Modifiziert mit extra Nullstellen bei s=-4');
     nut = nut * (s+4);
     rho = rho + 1;
 end
@@ -19,14 +18,20 @@ res = resultante(nu,mu,rho);
 f = flipud(transpose(f));
 
 row = zeros(1, 2*rho+2);
-row(1,1) = 1;
-row(1,3) = -omega*omega;
+for i = 1:rho+1
+    if mod(i,2) ~= 0
+        row(1,i) = (1i)^(i+3) * omega^(i);
+    end
+end
 res(end+1, 1:end) = row(1,1:end);
 f(end+1)=0;
 
 row = zeros(1, 2*rho+2);
-row(1,2) = 1;
-row(1,4) = -omega*omega;
+for i = 1:rho+1
+    if mod(i,2)==0
+        row(1,i) = (1i)^(i+2) * omega^(i);
+    end
+end
 res(end+1, 1:end) = row(1,1:end);
 f(end+1)=0;
 
