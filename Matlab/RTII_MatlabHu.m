@@ -2,7 +2,7 @@
 clear; close all; clc
 s = tf('s');
 
-idx = 3; %Select Testbeispiel
+idx =6; %Select Testbeispiel
 
 if idx == 1
     P = (s+3)/(s*(s-1));
@@ -32,9 +32,9 @@ P = (s-3)/(s*(s-1));
 
 omega = 3;
 
-%nut = s + 5;
+nut = s + 5;
 %nut = (s + 5)^2;
-nut = (s + 5)^5;
+%nut = (s + 5)^5;
 
 [R, T] = polvorgabe_HStoerung(P, nut, omega);
 figure(2)

@@ -6,15 +6,22 @@ s = tf('s');
 %Überprüfe für T(s) auf Bibo Stabilität
 if myisstable(T) == 1 % T(s) is Bibo Stabil
     %Überprüfe instabile Nullstellen von P(s) sind Nullstellen von T(s)
-    nu = zero(P);
-    nut = zero(T);
+    mu = zero(P);
+    mut = zero(T);
     
     T_neu = T;
-    for i = 1:length(nu)
-        if (real(nu(i)) > 0) && ~ismember(nu(i), nut)
+    for i = 1:length(mu)
+        if (real(mu(i)) > 0) && ~ismember(real(mu(i)), mut)
             % T(s) modifizieren
-            T_neu = T_neu * (s - real(nu(i)));
+            T_neu = T_neu * (s - real(mu(i)));
             modify_flag = 1;
+        elseif (real(mu(i)) > 0) && ismember(real(mu(i)), mut)
+            for j = 1:length(mut)
+                if mut(j) == real(mu(i))
+                    mut(j) = 0;
+                    break;
+                end
+            end
         end
     end
 
